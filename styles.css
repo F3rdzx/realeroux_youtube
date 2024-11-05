@@ -1,0 +1,122 @@
+/* Reset styling for compatibility */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.landing-page {
+    background: url('/path/to/your/uploaded/image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    animation: fadeUp 1.5s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: textPop 1s ease-in-out;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+    background: #ff6600;
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: #00b300;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    animation: bounce 1s infinite alternate;
+}
+
+.download-button:hover {
+    transform: scale(1.1);
+}
+
+.thank-you {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #ffd700;
+    animation: fadeIn 2s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
